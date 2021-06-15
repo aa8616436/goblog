@@ -16,3 +16,8 @@ postgre:
   name: game_test
   #前缀
   table_prefix: tb_
+
+gin:
+  http_port: 8081
+  read_timeout: 60
+  write_timeout: 60

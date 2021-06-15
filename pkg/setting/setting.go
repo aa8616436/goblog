@@ -4,6 +4,7 @@ import (
 	"gopkg.in/yaml.v2"
 	"io/ioutil"
 	"log"
+	"time"
 )
 
 //初始化全局配置
@@ -12,6 +13,7 @@ import (
 type Set struct {
 	Redis   Redis
 	Postgre Postgre
+	Gin     Gin
 }
 
 type Redis struct {
@@ -32,10 +34,16 @@ type Postgre struct {
 	TablePrefix string `yaml:"table_prefix"`
 }
 
+type Gin struct {
+	HttpPort     int `yaml:"http_port"`
+	ReadTimeout  time.Duration `yaml:"read_timeout"`
+	WriteTimeout time.Duration `yaml:"write_timeout"`
+}
+
 var Setting = Set{}
 
 func InitSetting() {
-	file, err := ioutil.ReadFile("../../conf/app.yml")
+	file, err := ioutil.ReadFile("./conf/app.yml")
 	if err != nil {
 		log.Fatal("fail to read file:", err)
 	}
