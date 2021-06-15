@@ -1,0 +1,18 @@
+# github.com/davecgh/go-spew v1.1.1
+github.com/davecgh/go-spew/spew
+# github.com/gomodule/redigo v2.0.0+incompatible
+github.com/gomodule/redigo/redis
+github.com/gomodule/redigo/internal
+# github.com/jinzhu/gorm v1.9.16
+github.com/jinzhu/gorm/dialects/postgres
+# github.com/lib/pq v1.1.1
+github.com/lib/pq
+github.com/lib/pq/hstore
+github.com/lib/pq/oid
+github.com/lib/pq/scram
+# github.com/pmezard/go-difflib v1.0.0
+github.com/pmezard/go-difflib/difflib
+# github.com/stretchr/testify v1.5.0
+github.com/stretchr/testify/assert
+# gopkg.in/yaml.v2 v2.4.0
+gopkg.in/yaml.v2
