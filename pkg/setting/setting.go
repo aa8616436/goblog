@@ -4,7 +4,6 @@ import (
 	"gopkg.in/yaml.v2"
 	"io/ioutil"
 	"log"
-	"time"
 )
 
 //初始化全局配置
@@ -36,8 +35,8 @@ type Postgre struct {
 
 type Gin struct {
 	HttpPort     int `yaml:"http_port"`
-	ReadTimeout  time.Duration `yaml:"read_timeout"`
-	WriteTimeout time.Duration `yaml:"write_timeout"`
+	ReadTimeout  int `yaml:"read_timeout"`
+	WriteTimeout int `yaml:"write_timeout"`
 }
 
 var Setting = Set{}

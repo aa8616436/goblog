@@ -6,6 +6,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"log"
 	"net/http"
+	"time"
 )
 
 type GinConfig struct {
@@ -31,13 +32,13 @@ func InitHttp() {
 	server := http.Server{
 		Addr:           fmt.Sprintf(":%d", g.HttpPort),
 		Handler:        router,
-		ReadTimeout:    g.ReadTimeout,
-		WriteTimeout:   g.WriteTimeout,
+		ReadTimeout:    time.Duration(g.ReadTimeout) * time.Second,
+		WriteTimeout:   time.Duration(g.WriteTimeout) * time.Second,
 		MaxHeaderBytes: 1 << 20,
 	}
 
-	log.Println("http port : ",g.HttpPort)
-	if e := server.ListenAndServe();e!=nil{
+	log.Println("http port : ", g.HttpPort)
+	if e := server.ListenAndServe(); e != nil {
 		if e == http.ErrServerClosed {
 			log.Println("Server closed under request")
 		} else {
